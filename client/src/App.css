@@ -1,0 +1,153 @@
+.App {
+    /* text-align: center; */
+    background-color: #8692b4;
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+}
+
+@media (min-width: 800px) {
+    .App {
+        min-height: 800px;
+    }
+}
+
+
+/* button styles */
+
+.btn {
+    background-color: white;
+    color: #add8e6;
+    margin-top: 1em;
+}
+
+.row .col {
+    padding: 0;
+}
+
+.tabs .indicator {
+    background-color: #add8e6;
+}
+
+.tabs .tab a {
+    color: #add8e6;
+}
+
+.tabs .tab a:hover {
+    color: black;
+}
+
+.tabs .tab a.active {
+    color: #add8e6;
+}
+
+.newFormItem {
+    font-size: 1.1rem !important;
+    text-align: left !important;
+    width: 110% !important;
+}
+
+.left {
+    text-align: left !important;
+    float: left !important;
+}
+
+.fullWidth {
+    width: 150% !important;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.block {
+    display: block;
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+p {
+    margin: 5px 0px;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    color: yellow;
+}
+
+h2 {
+    margin: 5px 0px;
+    font-family: "Raleway", sans-serif;
+    color: yellow;
+}
+
+.ltBlue {
+    color: #add8e6;
+}
+
+.grn {
+    color: #61a661;
+}
+
+.yllw {
+    color: #ffd700;
+}
+
+.ltBrown {
+    color: #f4a460;
+}
+
+.orng {
+    color: #ff6600;
+}
+
+.pnk {
+    color: #ff0099;
+}
+
+.purp {
+    color: #6e0dd0;
+}
+
+.neon {
+    color: #83f52c;
+}
+
+.mauve {
+    color: #b784a7;
+}
+
+.rd {
+    color: #ff3c3d;
+}
+
+.dkblue {
+    color: blue;
+}
+
+tspan {
+    align-content: right !important;
+}
+
+.left {
+    text-align: left;
+}
+
+.full {
+    width: 100%;
+}
+
+nav {
+    background-color: #add8e6 !important;
+}
+
+li {
+    display: inline;
+    margin-left: 40px;
+}
+
+select {
+    margin: 5px 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+}
