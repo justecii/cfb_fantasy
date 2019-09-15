@@ -23,6 +23,7 @@ var path = require("path");
 
 var index = require("./routes/index");
 var stats = require("./routes/stats");
+var games = require("./routes/games");
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", index);
 app.use("/stats", stats);
+app.use("/games", games);
 // app.use("/users", users);
 // app.use("/auth", auth);
 app.listen(PORT, function() {

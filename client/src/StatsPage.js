@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
 import axios from "axios";
+
+import PlayerInfo from "./components/PlayerInfo";
 
 class StatsPage extends Component {
   constructor(props) {
@@ -10,10 +10,11 @@ class StatsPage extends Component {
       allTeams: [],
       roster: "Air Force",
       players: [],
-      stats: []
+      selectedPlayer: ""
     };
 
     this.handleTeam = this.handleTeam.bind(this);
+    this.handlePlayer = this.handlePlayer.bind(this);
   }
 
   componentDidMount() {
@@ -48,8 +49,12 @@ class StatsPage extends Component {
           });
       }
     );
-    // console.log(e.target.value);
-    // fetch(this.state.roster).then(result => console.log(result));
+  }
+
+  handlePlayer(e) {
+    this.setState({
+      selectedPlayer: e.target.value
+    });
   }
 
   render() {
@@ -59,7 +64,7 @@ class StatsPage extends Component {
       </option>
     ));
     let mappedPlayers = this.state.players.map(player => (
-      <option value={player.id} key={player.id}>
+      <option value={player.id} key={player.id} id={player.first_name}>
         {player.last_name}, {player.first_name}
       </option>
     ));
@@ -67,7 +72,11 @@ class StatsPage extends Component {
       <div>
         <p>stats Page</p>
         <select onChange={e => this.handleTeam(e)}>{mappedTeams}</select>
-        <select name="players">{mappedPlayers}</select>
+        <select onChange={e => this.handlePlayer(e)}>{mappedPlayers}</select>
+        <PlayerInfo
+          selectedPlayer={this.state.selectedPlayer}
+          roster={this.state.roster}
+        />
       </div>
     );
   }
