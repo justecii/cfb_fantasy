@@ -1,6 +1,24 @@
 table {
     table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border: 3px solid purple;
+    width: 96%;
+    margin: 0% 2%;
+    /* border-collapse: collapse; */
+    background-color: #7acfd6;
+    color: #ffffff;
+}
+
+.gameId {
+    font-size: 0.8em;
+}
+
+td {
+    text-align: center;
+}
+
+td:hover {
+    background-color: #e0474c;
+}
+
+th {
+    border-bottom: 2px solid white;
 }

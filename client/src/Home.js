@@ -8,7 +8,8 @@ class Home extends Component {
     return (
       <div>
         <p>HOME PAGE</p>
-        <h2>USer will be here</h2>
+        <p>I supoose league info and matchups will go here?</p>
+        <p>After logging in of course</p>
       </div>
     );
   }

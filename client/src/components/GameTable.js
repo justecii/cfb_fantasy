@@ -33,20 +33,22 @@ class GameTable extends Component {
               <tr>
                 <th>Game Id</th>
                 <th>Opponent</th>
-                <th>Passing Yards</th>
-                <th>Passing TD</th>
-                <th>Rushing Yards</th>
-                <th>Rushing TD</th>
-                <th>Receiving Yards</th>
-                <th>Receiving TD</th>
-                <th>{this.props.playerId}</th>
+                <th>Pass Yds</th>
+                <th>Pass TD</th>
+                <th>Rush Yds</th>
+                <th>Rush TD</th>
+                <th>Rec Yds</th>
+                <th>Rec TD</th>
               </tr>
             </thead>
           </table>
-          <h3>Select School then Player to load stats</h3>
+          <h3 className="holderData">
+            Select School then Player to load stats
+          </h3>
         </div>
       );
     } else {
+      console.log(this.state.gameLog);
       let mappedGames = this.state.gameLog.map(game => (
         <GameRow
           gameId={game.id}
@@ -61,12 +63,12 @@ class GameTable extends Component {
             <tr>
               <th>Game Id</th>
               <th>Opponent</th>
-              <th>Passing Yards</th>
-              <th>Passing TD</th>
-              <th>Rushing Yards</th>
-              <th>Rushing TD</th>
-              <th>Receiving Yards</th>
-              <th>Receiving TD</th>
+              <th>Pass Yds</th>
+              <th>Pass TD</th>
+              <th>Rush Yds</th>
+              <th>Rush TD</th>
+              <th>Rec Yds</th>
+              <th>Rec TD</th>
             </tr>
           </thead>
           <tbody>{mappedGames}</tbody>

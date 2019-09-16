@@ -1,6 +1,6 @@
 .App {
     /* text-align: center; */
-    background-color: #8692b4;
+    background-color: #f1f0ee;
     font-family: "Roboto", sans-serif;
     height: 100%;
 }
@@ -25,11 +25,11 @@
 }
 
 .tabs .indicator {
-    background-color: #add8e6;
+    background-color: #bd8c7d;
 }
 
 .tabs .tab a {
-    color: #add8e6;
+    color: #bd8c7d;
 }
 
 .tabs .tab a:hover {
@@ -72,57 +72,29 @@ p {
     margin: 5px 0px;
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
-    color: yellow;
+    color: #e0474c;
 }
 
 h2 {
     margin: 5px 0px;
     font-family: "Raleway", sans-serif;
-    color: yellow;
+    color: #e0474c;
 }
 
-.ltBlue {
-    color: #add8e6;
+.deep-red {
+    color: #b11a21;
 }
 
-.grn {
-    color: #61a661;
+.light-red {
+    color: #e0474c;
 }
 
-.yllw {
-    color: #ffd700;
+.blue-beans {
+    color: #7acfd6;
 }
 
-.ltBrown {
-    color: #f4a460;
-}
-
-.orng {
-    color: #ff6600;
-}
-
-.pnk {
-    color: #ff0099;
-}
-
-.purp {
-    color: #6e0dd0;
-}
-
-.neon {
-    color: #83f52c;
-}
-
-.mauve {
-    color: #b784a7;
-}
-
-.rd {
-    color: #ff3c3d;
-}
-
-.dkblue {
-    color: blue;
+.light-grey {
+    color: #f1f0ee;
 }
 
 tspan {
@@ -138,7 +110,13 @@ tspan {
 }
 
 nav {
-    background-color: #add8e6 !important;
+    background-color: #ffffff !important;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.4em;
 }
 
 li {
@@ -150,4 +128,8 @@ select {
     margin: 5px 10px;
     font-family: "Roboto", sans-serif;
     font-size: 1em;
+}
+
+.holderData {
+    margin: 2%;
 }
