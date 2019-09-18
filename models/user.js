@@ -24,8 +24,8 @@ var userSchema = new mongoose.Schema({
     minlength: 8,
     maxlength: 99
   },
-  activities: [{ type: Schema.ObjectId, ref: "Activity" }],
-  goals: [{ type: Schema.ObjectId, ref: "Goal" }]
+  leagues: [{ type: Schema.ObjectId, ref: "League" }],
+  teams: [{ type: Schema.ObjectId, ref: "Team" }]
 });
 
 // Override 'toJSON' to prevent the password from being returned with the user
@@ -56,6 +56,61 @@ userSchema.pre("save", function(next) {
   // store the hash as the user's password
   this.password = hash;
   next();
+});
+
+var leagueSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 99
+  },
+  rosterSize: {
+    type: Number,
+    required: true
+  },
+  qbs: {
+    type: Number,
+    required: true
+  },
+  rbs: {
+    type: Number,
+    required: true
+  },
+  wrs: {
+    type: Number,
+    required: true
+  },
+  tes: {
+    type: Number,
+    required: true
+  },
+  idp: {
+    type: Number,
+    required: true
+  },
+  kickers: {
+    type: Number,
+    required: true
+  },
+  teamDef: {
+    type: Number,
+    required: true
+  },
+  teams: [{ type: Schema.ObjectId, ref: "Team" }],
+  user: [{ type: Schema.ObjectId, ref: "User" }]
+});
+
+var teamSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 66
+  },
+  //   TO DO ADD ROSTERS
+  owner: [{ type: Schema.ObjectId, ref: "User" }],
+  league: [{ type: Schema.ObjectId, ref: "League" }]
 });
 
 var User = mongoose.model("User", userSchema);

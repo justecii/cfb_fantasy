@@ -111,6 +111,8 @@ tspan {
 
 nav {
     background-color: #ffffff !important;
+    height: 3em !important;
+    border: 2px solid #b11a21;
 }
 
 nav li a {
