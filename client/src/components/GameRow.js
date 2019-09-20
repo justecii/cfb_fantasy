@@ -46,7 +46,7 @@ class GameRow extends Component {
       for (let i = 0; i < this.state.gameStats.length; i++) {
         if (this.state.gameStats[i].school !== this.props.team) {
           this.setState({ opponent: this.state.gameStats[i].school });
-          console.log(this.state.gameStats);
+          //   console.log(this.state.gameStats);
         } else {
           //   find passing yards
           let categories = this.state.gameStats[i].categories;
@@ -124,6 +124,7 @@ class GameRow extends Component {
         }
       }
     }
+    this.props.handleSeasonData(this.state.passYd, this.state.passTd);
   }
 
   render() {

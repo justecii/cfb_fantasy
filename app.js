@@ -50,7 +50,7 @@ app.listen(PORT, function() {
 });
 
 app.get("*", function(req, res, next) {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "client", "public", "index.html"));
 });
 
 // catch 404 and forward to error handler - commented out

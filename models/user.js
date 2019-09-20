@@ -108,13 +108,46 @@ var teamSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: 66
   },
-  //   TO DO ADD ROSTERS
-  owner: [{ type: Schema.ObjectId, ref: "User" }],
+  user: [{ type: Schema.ObjectId, ref: "User" }],
+  players: [{ type: Schema.ObjectId, ref: "Player" }],
   league: [{ type: Schema.ObjectId, ref: "League" }]
 });
 
+var playerSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 99
+  },
+  position: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 4
+  },
+  school: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 25
+  },
+  dbId: {
+    type: String,
+    minlength: 1,
+    maxlength: 99
+  },
+  team: [{ type: Schema.ObjectId, ref: "Team" }]
+});
+
+var League = mongoose.model("League", leagueSchema);
+var Player = mongoose.model("Player", playerSchema);
+var Team = mongoose.model("Team", teamSchema);
 var User = mongoose.model("User", userSchema);
 
 module.exports = {
+  League: League,
+  Player: Player,
+  Team: Team,
   User: User
 };

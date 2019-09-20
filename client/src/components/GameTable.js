@@ -3,13 +3,21 @@ import axios from "axios";
 
 import "../styles/GameTable.css";
 import GameRow from "./GameRow";
+import SeasonRow from "./SeasonRow";
 
 class GameTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gameLog: []
+      gameLog: [],
+      passYdTotal: 0,
+      passTdTotal: 0,
+      rushYdTotal: 0,
+      rushTdTotal: 0,
+      recYdTotal: 0,
+      recTdTotal: 0
     };
+    this.handleSeasonData = this.handleSeasonData.bind(this);
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.team !== this.props.team) {
@@ -24,6 +32,15 @@ class GameTable extends Component {
         );
     }
   }
+
+  handleSeasonData(passYd, passTd) {
+    // this.setState({
+    //   passYdTotal: this.state.passYdTotal + passYd,
+    //   passTdTotal: this.state.passTdTotal + passTd
+    // });
+    console.log("HIT");
+  }
+
   render() {
     if (this.props.playerId === "") {
       return (
@@ -48,13 +65,14 @@ class GameTable extends Component {
         </div>
       );
     } else {
-      console.log(this.state.gameLog);
+      //   console.log(this.state.gameLog);
       let mappedGames = this.state.gameLog.map(game => (
         <GameRow
           gameId={game.id}
           team={this.props.team}
           playerId={this.props.playerId}
           key={game.id}
+          handleSeasonData={this.handleSeasonData}
         />
       ));
       return (
@@ -71,7 +89,10 @@ class GameTable extends Component {
               <th>Rec TD</th>
             </tr>
           </thead>
-          <tbody>{mappedGames}</tbody>
+          <tbody>
+            {mappedGames}
+            <SeasonRow />
+          </tbody>
         </table>
       );
     }
