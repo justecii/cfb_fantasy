@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class SeasonRow extends Component {
   constructor(props) {
@@ -14,6 +13,9 @@ class SeasonRow extends Component {
       recYd: 0,
       recTd: 0
     };
+  }
+  componentDidMount() {
+    console.log(this.props);
   }
 
   render() {

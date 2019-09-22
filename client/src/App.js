@@ -5,6 +5,7 @@ import axios from "axios";
 
 import StatsPage from "./StatsPage";
 import Home from "./Home";
+import League from "./League";
 import MyTeam from "./MyTeam";
 import Signup from "./Signup";
 import Login from "./Login";
@@ -131,6 +132,9 @@ class App extends Component {
                 <NavLink to="/">Fantasy NCAAF</NavLink>
               </li>
               <li>
+                <NavLink to="/leaguehome">League</NavLink>
+              </li>
+              <li>
                 <NavLink to="/myteam">My Team</NavLink>
               </li>
               <li>
@@ -141,6 +145,7 @@ class App extends Component {
               </li>
             </nav>
             <Route exact path="/" component={Home} />
+            <Route path="/leaguehome" component={League} />
             <Route path="/stats" component={StatsPage} />
             <Route path="/myteam" component={MyTeam} />
           </div>

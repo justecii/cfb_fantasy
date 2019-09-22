@@ -12,7 +12,8 @@ class GameRow extends Component {
       rushYd: 0,
       rushTd: 0,
       recYd: 0,
-      recTd: 0
+      recTd: 0,
+      sendProps: true
     };
   }
   componentDidMount() {
@@ -124,7 +125,12 @@ class GameRow extends Component {
         }
       }
     }
-    this.props.handleSeasonData(this.state.passYd, this.state.passTd);
+    // if (this.state.sendProps) {
+    //   this.setState({
+    //     sendProps: false
+    //   });
+    //   this.props.handleSeasonData(this.state.passYd, this.state.passTd);
+    // }
   }
 
   render() {
@@ -132,12 +138,12 @@ class GameRow extends Component {
       <tr>
         <td className="gameId">{this.props.gameId}</td>
         <td>{this.state.opponent}</td>
-        <td>{this.state.passYd}</td>
-        <td>{this.state.passTd}</td>
-        <td>{this.state.rushYd}</td>
-        <td>{this.state.rushTd}</td>
-        <td>{this.state.recYd}</td>
-        <td>{this.state.recTd}</td>
+        <td className="gamePassYd">{this.state.passYd}</td>
+        <td className="gamePassTd">{this.state.passTd}</td>
+        <td className="gameRushYd">{this.state.rushYd}</td>
+        <td className="gameRushTd">{this.state.rushTd}</td>
+        <td className="gameRecYd">{this.state.recYd}</td>
+        <td className="gameRecTd">{this.state.recTd}</td>
       </tr>
     );
   }

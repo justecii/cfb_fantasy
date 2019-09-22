@@ -33,19 +33,19 @@ class GameTable extends Component {
     }
   }
 
-  handleSeasonData(passYd, passTd) {
+  handleSeasonData(e) {
     // this.setState({
     //   passYdTotal: this.state.passYdTotal + passYd,
     //   passTdTotal: this.state.passTdTotal + passTd
     // });
-    console.log("HIT");
+    // console.log(e);
   }
 
   render() {
     if (this.props.playerId === "") {
       return (
         <div>
-          <table>
+          <table id="gameLogTable">
             <thead>
               <tr>
                 <th>Game Id</th>
@@ -91,7 +91,7 @@ class GameTable extends Component {
           </thead>
           <tbody>
             {mappedGames}
-            <SeasonRow />
+            <SeasonRow playerId={this.props.playerId} />
           </tbody>
         </table>
       );
