@@ -9,6 +9,7 @@ import League from "./League";
 import MyTeam from "./MyTeam";
 import Signup from "./Signup";
 import Login from "./Login";
+import LeagueRoute from "./components/LeagueRoute";
 
 import "./App.css";
 const customStyles = {
@@ -23,6 +24,10 @@ const customStyles = {
     backgroundColor: "#ADD8E6",
     color: "white"
   }
+};
+const selectedStyle = {
+  borderBottom: "3px solid #7acfd6",
+  color: "#7acfd6"
 };
 
 class App extends Component {
@@ -132,22 +137,44 @@ class App extends Component {
                 <NavLink to="/">Fantasy NCAAF</NavLink>
               </li>
               <li>
-                <NavLink to="/leaguehome">League</NavLink>
+                <NavLink to="/league" activeStyle={selectedStyle}>
+                  League
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/myteam">My Team</NavLink>
+                <NavLink to="/myteam" activeStyle={selectedStyle}>
+                  My Team
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/stats">Stats Page</NavLink>
+                <NavLink to="/stats" activeStyle={selectedStyle}>
+                  Stats Page
+                </NavLink>
               </li>
               <li onClick={this.logout}>
                 <NavLink to="/">Log Out</NavLink>
               </li>
             </nav>
-            <Route exact path="/" component={Home} />
-            <Route path="/leaguehome" component={League} />
-            <Route path="/stats" component={StatsPage} />
-            <Route path="/myteam" component={MyTeam} />
+            <Route
+              exact
+              path="/"
+              render={props => <Home {...props} user={this.state.user} />}
+            />
+            <Route
+              exact
+              path="/league"
+              render={props => <League {...props} user={this.state.user} />}
+            />
+            <Route
+              exact
+              path="/stats"
+              render={props => <StatsPage {...props} user={this.state.user} />}
+            />
+            <Route
+              exact
+              path="/myteam"
+              render={props => <MyTeam {...props} user={this.state.user} />}
+            />
           </div>
         </Router>
       );

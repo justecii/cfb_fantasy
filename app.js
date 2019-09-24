@@ -24,6 +24,7 @@ var path = require("path");
 var auth = require("./routes/auth");
 var games = require("./routes/games");
 var index = require("./routes/index");
+var league = require("./routes/league");
 var stats = require("./routes/stats");
 
 // uncomment after placing your favicon in /public
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", index);
 app.use("/auth", auth);
 app.use("/games", games);
+app.use("/league", league);
 app.use("/stats", stats);
 // app.use("/users", users);
 app.listen(PORT, function() {

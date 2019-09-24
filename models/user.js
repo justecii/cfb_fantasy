@@ -97,6 +97,13 @@ var leagueSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  benchSize: {
+    type: Number
+  },
+  teamNumber: {
+    type: Number,
+    required: true
+  },
   teams: [{ type: Schema.ObjectId, ref: "Team" }],
   user: [{ type: Schema.ObjectId, ref: "User" }]
 });
